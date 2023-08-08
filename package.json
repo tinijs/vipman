@@ -1,0 +1,45 @@
+{
+  "name": "@tinijs/vipman",
+  "version": "0.0.0",
+  "description": "Verion, interlink and publication manager of the TiniJS project.",
+  "author": "Lam Nhan",
+  "homepage": "https://tinijs.dev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinijs/vipman.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tinijs/vipman/issues"
+  },
+  "scripts": {
+    "bump": "ts-node src/bump.ts",
+    "build": "npm run build:1:cli && npm run build:2:ui && npm run build:3:skeleton && npm run build:4:core && npm run build:5:router && npm run build:6:store && npm run build:7:meta && npm run build:8:pwa && npm run build:9:toolbox",
+    "build:1:cli": "cd ../cli && npm run build",
+    "publish:1:cli": "cd ../cli && npm publish --access public",
+    "build:2:ui": "cd ../ui && npm run build",
+    "publish:2:ui": "cd ../ui && npm publish --access public",
+    "build:3:skeleton": "cd ../skeleton && npm run build",
+    "publish:3:skeleton": "cd ../skeleton && npm publish --access public",
+    "build:4:core": "cd ../core && npm run build",
+    "publish:4:core": "cd ../core && npm publish --access public",
+    "build:5:router": "cd ../router && npm run build",
+    "publish:5:router": "cd ../router && npm publish --access public",
+    "build:6:store": "cd ../store && npm run build",
+    "publish:6:store": "cd ../store && npm publish --access public",
+    "build:7:meta": "cd ../meta && npm run build",
+    "publish:7:meta": "cd ../meta && npm publish --access public",
+    "build:8:pwa": "cd ../pwa && npm run build",
+    "publish:8:pwa": "cd ../pwa && npm publish --access public",
+    "build:9:toolbox": "cd ../toolbox && npm run build",
+    "publish:9:toolbox": "cd ../toolbox && npm publish --access public",
+    "lint": "gts lint",
+    "fix": "gts fix"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.8",
+    "gts": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "~5.1.6"
+  }
+}
