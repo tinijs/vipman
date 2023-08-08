@@ -14,7 +14,11 @@ Then, install the dependencies: `cd vipman && npm i`.
 - Build packages: `npm run build`
 - Publish packages (individually): `npm run publish:<id>:<name>`
 
-Note that the `@tinijs/icons` packages are built and published separately. Please refer to the respective [package.json](https://github.com/tinijs/icons/blob/main/package.json) for more detail.
+Note that the `@tinijs/ui` and `@tinijs/icons` packages are built and published separately.
+
+Please refer to the respective repos for more detail:
+ - [@tinijs/ui](https://github.com/tinijs/ui/blob/main/package.json)
+ - [@tinijs/icons](https://github.com/tinijs/icons/blob/main/package.json)
 
 ## License
 
