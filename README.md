@@ -10,13 +10,21 @@ Then, install the dependencies: `cd vipman && npm i`.
 
 ## Usage
 
-- Bump versions: `npm run bump`
-- Build packages: `npm run build`
-- Publish packages (individually): `npm run publish:<id>:<name>`
+Here is the build and deployment procedure:
 
-Note that the `@tinijs/ui` and `@tinijs/icons` packages are built and published separately.
+### I - Sync versions
 
-Please refer to the respective repos for more detail:
+Set a base version `npm version <number> && git push origin v<number>`
+
+### II - Build and publish packages
+
+Packages depend on each other, so they are built and published one by one:
+
+- **Step 1**: `npm run build:<id>:<name>`
+- **Step 2**: `npm run publish:<id>:<name>`
+
+Note that the `@tinijs/ui` and `@tinijs/icons` packages are built and published separately. Please refer to the respective repos for more detail:
+
  - [@tinijs/ui](https://github.com/tinijs/ui/blob/main/package.json)
  - [@tinijs/icons](https://github.com/tinijs/icons/blob/main/package.json)
 
