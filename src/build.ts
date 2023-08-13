@@ -89,7 +89,6 @@ class BuildService {
     Object.keys(deps).forEach(key => {
       if (
         !key.startsWith('@tinijs/') ||
-        ~key.indexOf('/ui') ||
         key.endsWith('-icons')
       ) return;
       deps[key] = `^${this.baseVersion}`;

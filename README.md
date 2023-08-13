@@ -14,7 +14,7 @@ Here is the build and deployment procedure:
 
 ### I - Sync versions
 
-Set a base version `npm version <number> && git push origin v<number>`
+Set a base version `npm version <number> && git push origin v<number> && git push origin`
 
 ### II - Build and publish packages
 
