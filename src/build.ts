@@ -12,7 +12,9 @@ interface PackageJson {
 }
 
 class BuildService {
-  private readonly vipmanPackageJson = readJsonSync(resolve('package.json')) as PackageJson;
+  private readonly vipmanPackageJson = readJsonSync(
+    resolve('package.json')
+  ) as PackageJson;
 
   constructor(private path: string) {}
 
@@ -28,13 +30,13 @@ class BuildService {
     // sync version
     const changedDeps = await this.syncVersion();
     console.log(
-      `${green('✔')} Synced version to ${bold(blueBright(this.baseVersion))}`,
+      `${green('✔')} Synced version to ${bold(blueBright(this.baseVersion))}`
     );
     Object.keys(changedDeps).forEach(key => {
       const names = (changedDeps as any)[key] as string[];
       if (!names.length) return;
       console.log(
-        `  + Bump ${key}: ${names.map(name => blueBright(name)).join(', ')}`,
+        `  + Bump ${key}: ${names.map(name => blueBright(name)).join(', ')}`
       );
     });
     console.log('\n');
@@ -54,10 +56,10 @@ class BuildService {
       {cwd: this.projectPath, stdio: 'inherit'}
     );
   }
-  
+
   private async syncVersion() {
     const packageJsonPath = resolve(this.projectPath, 'package.json');
-    const packageJson = await readJson(packageJsonPath) as PackageJson;
+    const packageJson = (await readJson(packageJsonPath)) as PackageJson;
     // bump version
     packageJson.version = this.baseVersion;
     // sync dependencies
@@ -71,7 +73,7 @@ class BuildService {
       changedDeps.dependencies = names;
     }
     if (packageJson.devDependencies) {
-      const names =this.syncDependenciesVersion(packageJson.devDependencies);
+      const names = this.syncDependenciesVersion(packageJson.devDependencies);
       changedDeps.devDependencies = names;
     }
     if (packageJson.peerDependencies) {
@@ -87,10 +89,7 @@ class BuildService {
   private syncDependenciesVersion(deps: PackageJson['dependencies']) {
     const packageNames: string[] = [];
     Object.keys(deps).forEach(key => {
-      if (
-        !key.startsWith('@tinijs/') ||
-        key.endsWith('-icons')
-      ) return;
+      if (!key.startsWith('@tinijs/') || key.endsWith('-icons')) return;
       deps[key] = `^${this.baseVersion}`;
       packageNames.push(key);
     });

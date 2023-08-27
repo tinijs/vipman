@@ -23,10 +23,7 @@ Packages depend on each other, so they are built and published one by one:
 - **Step 1**: `npm run build:<id>:<name>`
 - **Step 2**: `npm run publish:<id>:<name>`
 
-Note that the `@tinijs/ui` and `@tinijs/icons` packages are built and published separately. Please refer to the respective repos for more detail:
-
- - [@tinijs/ui](https://github.com/tinijs/ui/blob/main/package.json)
- - [@tinijs/icons](https://github.com/tinijs/icons/blob/main/package.json)
+Note that the [@tinijs/icons](https://github.com/tinijs/icons/blob/main/package.json) package is built and published separately (depends on **@tinijs/cli**, **@tinijs/core**). Please refer to the respective repo for more detail.
 
 ## License
 
