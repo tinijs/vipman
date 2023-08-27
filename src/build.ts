@@ -89,7 +89,11 @@ class BuildService {
   private syncDependenciesVersion(deps: PackageJson['dependencies']) {
     const packageNames: string[] = [];
     Object.keys(deps).forEach(key => {
-      if (!key.startsWith('@tinijs/') || key.endsWith('-icons')) return;
+      if (
+        key !== 'tinijs' &&
+        (!key.startsWith('@tinijs/') || key.endsWith('-icons'))
+      )
+        return;
       deps[key] = `^${this.baseVersion}`;
       packageNames.push(key);
     });
