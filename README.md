@@ -4,7 +4,7 @@ Verion, interlink and publication manager of the TiniJS project.
 
 ## Install
 
-Clone the repository to the same folder as other TiniJS packages: `git clone https://github.com/tinijs/vipman.git`.
+Put the code to the same folder as other `TiniJS` packages.
 
 Then, install the dependencies: `cd vipman && npm i`.
 
