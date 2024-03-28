@@ -1,5 +1,8 @@
 # Vipman
 
+> [!IMPORTANT]
+> This tool is NO LONGER use in the new monorepo at <https://github.com/tinijs/tinijs>.
+
 Verion, interlink and publication manager of the TiniJS project.
 
 ## Install
